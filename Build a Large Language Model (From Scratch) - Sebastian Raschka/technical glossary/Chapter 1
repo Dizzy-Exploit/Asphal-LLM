@@ -1,38 +1,38 @@
 LLM (Large Language Model)
-🇺🇸 A deep neural network designed to understand, generate, and respond to human-like text. The "large" refers to two things: the model size (tens or even hundreds of billions of parameters) and the huge dataset it's trained on — sometimes large portions of the publicly available text on the internet.
-🇧🇷 Uma rede neural profunda feita pra entender, gerar e responder texto parecido com o humano. O "large" se refere a duas coisas: o tamanho do modelo (dezenas ou até centenas de bilhões de parâmetros) e o dataset gigante em que ele é treinado — às vezes boa parte do texto público disponível na internet.
+🇺🇸 A deep neural network designed to understand, generate, and respond to human-like text. The "large" refers to two things: the model size in terms of parameters (tens or even hundreds of billions) and the huge dataset it's trained on, sometimes large portions of the publicly available text on the internet.
+🇧🇷 Uma rede neural profunda feita pra entender, gerar e responder texto parecido com o humano. O "large" se refere a duas coisas: o tamanho do modelo em parâmetros (dezenas ou até centenas de bilhões) e o dataset gigante em que ele é treinado, às vezes boa parte do texto público disponível na internet.
 
 NLP (Natural Language Processing)
-🇺🇸 The field of AI focused on making computers work with human language. LLMs ushered in a new era for NLP — before them, traditional methods were good at things like spam classification but failed at tasks demanding complex understanding and generation.
-🇧🇷 O campo da IA focado em fazer computadores trabalharem com linguagem humana. Os LLMs inauguraram uma nova era no NLP — antes deles, os métodos tradicionais eram bons em coisas como classificação de spam, mas falhavam em tarefas que exigiam compreensão e geração complexas.
+🇺🇸 The field of AI focused on making computers work with human language. LLMs ushered in a new era for NLP, before them, traditional methods were good at things like spam classification but failed at tasks demanding complex understanding and generation abilities.
+🇧🇷 O campo da IA focado em fazer computadores trabalharem com linguagem humana. Os LLMs inauguraram uma nova era no NLP, antes deles os métodos tradicionais eram bons em coisas como classificação de spam mas falhavam em tarefas que exigiam compreensão e geração mais complexas.
 
 Parameters
-🇺🇸 The adjustable weights in the network, optimized during training to predict the next word in a sequence.
-🇧🇷 Os pesos ajustáveis da rede, otimizados durante o treinamento pra prever a próxima palavra de uma sequência.
+🇺🇸 The adjustable weights in the network that are optimized during training to predict the next word in a sequence.
+🇧🇷 Os pesos ajustáveis da rede que são otimizados durante o treinamento pra prever a próxima palavra numa sequência.
 
 Next-word prediction
-🇺🇸 The training task behind LLMs: predicting the next word in the text. It makes sense because it harnesses the sequential nature of language — and it's surprising to many researchers that such a simple task produces such capable models.
-🇧🇷 A tarefa de treinamento por trás dos LLMs: prever a próxima palavra do texto. Faz sentido porque aproveita a natureza sequencial da linguagem — e surpreende muitos pesquisadores que uma tarefa tão simples produza modelos tão capazes.
+🇺🇸 The core training task of LLMs: predicting the next word in the text. It makes sense because it harnesses the sequential nature of language, and it's surprising to many researchers that such a simple task produces such capable models.
+🇧🇷 A tarefa central de treinamento dos LLMs: prever a próxima palavra no texto. Faz sentido porque aproveita a natureza sequencial da linguagem, e surpreende muitos pesquisadores que uma tarefa tão simples produza modelos tão capazes.
 
 Transformer
-🇺🇸 The architecture behind most modern LLMs, introduced in the 2017 paper "Attention Is All You Need". Originally developed for machine translation (English to German and French). Has two submodules: encoder and decoder.
-🇧🇷 A arquitetura por trás da maioria dos LLMs modernos, apresentada no paper de 2017 "Attention Is All You Need". Foi criada originalmente pra tradução automática (inglês pra alemão e francês). Tem dois submódulos: encoder e decoder.
+🇺🇸 The architecture behind most modern LLMs, introduced in the 2017 paper "Attention Is All You Need". Originally developed for machine translation from English to German and French. Has two submodules: encoder and decoder.
+🇧🇷 A arquitetura por trás da maioria dos LLMs modernos, apresentada no paper de 2017 "Attention Is All You Need". Foi criada originalmente pra tradução automática do inglês pro alemão e francês. Tem dois submódulos: encoder e decoder.
 
 Encoder
-🇺🇸 The submodule that processes the input text and encodes it into a series of numerical representations (vectors) capturing the contextual information of the input.
-🇧🇷 O submódulo que processa o texto de entrada e o codifica numa série de representações numéricas (vetores) que capturam a informação contextual da entrada.
+🇺🇸 The submodule that processes the input text and encodes it into a series of numerical representations or vectors that capture the contextual information of the input.
+🇧🇷 O submódulo que processa o texto de entrada e o codifica numa série de representações numéricas ou vetores que capturam a informação contextual da entrada.
 
 Decoder
-🇺🇸 The submodule that takes the encoded vectors and generates the output text — one word at a time.
-🇧🇷 O submódulo que pega os vetores codificados e gera o texto de saída — uma palavra por vez.
+🇺🇸 The submodule that takes the encoded vectors and generates the output text one word at a time.
+🇧🇷 O submódulo que pega os vetores codificados e gera o texto de saída uma palavra por vez.
 
 Self-attention
-🇺🇸 The key component of transformers and LLMs. It lets the model weigh the importance of different words/tokens in a sequence relative to each other, capturing long-range dependencies and contextual relationships. The "self" means it relates positions within a single input sequence.
-🇧🇷 O componente-chave dos transformers e LLMs. Permite que o modelo pondere a importância de diferentes palavras/tokens de uma sequência em relação umas às outras, capturando dependências de longo alcance e relações contextuais. O "self" significa que ele relaciona posições dentro de uma única sequência de entrada.
+🇺🇸 The key component of transformers and LLMs. It allows the model to weigh the importance of different words or tokens in a sequence relative to each other, capturing long-range dependencies and contextual relationships within the input data. The "self" means it relates positions within a single input sequence.
+🇧🇷 O componente-chave dos transformers e LLMs. Permite que o modelo pondere a importância de diferentes palavras ou tokens numa sequência em relação umas às outras, capturando dependências de longo alcance e relações contextuais nos dados de entrada. O "self" significa que relaciona posições dentro de uma única sequência de entrada.
 
 Attention mechanism
-🇺🇸 Gives the LLM selective access to the whole input sequence when generating the output one word at a time. Some input tokens matter more than others for a given output token.
-🇧🇷 Dá ao LLM acesso seletivo à sequência de entrada inteira ao gerar a saída palavra por palavra. Alguns tokens de entrada importam mais que outros pra um determinado token de saída.
+🇺🇸 Gives the LLM selective access to the whole input sequence when generating the output one word at a time. Some input tokens matter more than others for generating a given output token.
+🇧🇷 Dá ao LLM acesso seletivo à sequência de entrada inteira ao gerar a saída palavra por palavra. Alguns tokens de entrada importam mais que outros pra gerar um determinado token de saída.
 
 Embedding
 🇺🇸 A numerical representation that captures many different factors in different dimensions.
@@ -40,88 +40,88 @@ Embedding
 
 Token
 🇺🇸 A unit of text that a model reads. The number of tokens in a dataset is roughly equivalent to the number of words and punctuation characters in the text.
-🇧🇷 Uma unidade de texto que o modelo lê. O número de tokens de um dataset é aproximadamente equivalente ao número de palavras e sinais de pontuação do texto.
+🇧🇷 Uma unidade de texto que o modelo lê. O número de tokens num dataset é aproximadamente equivalente ao número de palavras e sinais de pontuação do texto.
 
 Tokenization
-🇺🇸 The process of converting text into tokens (covered in detail in chapter 2).
-🇧🇷 O processo de converter texto em tokens (visto em detalhe no capítulo 2).
+🇺🇸 The process of converting text into tokens, covered in detail in chapter 2.
+🇧🇷 O processo de converter texto em tokens, visto em detalhe no capítulo 2.
 
 BERT (Bidirectional Encoder Representations from Transformers)
-🇺🇸 Built upon the transformer's encoder submodule. Specializes in masked word prediction, which gives it strengths in text classification tasks like sentiment prediction and document categorization. Fun fact from the book: X (formerly Twitter) uses BERT to detect toxic content.
-🇧🇷 Construído sobre o submódulo encoder do transformer. Se especializa em previsão de palavras mascaradas, o que dá a ele força em tarefas de classificação de texto, como análise de sentimento e categorização de documentos. Curiosidade do livro: o X (antigo Twitter) usa BERT pra detectar conteúdo tóxico.
+🇺🇸 Built upon the transformer's encoder submodule. Specializes in masked word prediction, which gives it strengths in text classification tasks like sentiment prediction and document categorization. Worth noting: X (formerly Twitter) uses BERT to detect toxic content.
+🇧🇷 Construído sobre o submódulo encoder do transformer. Se especializa em previsão de palavras mascaradas, o que dá força em tarefas de classificação de texto como análise de sentimento e categorização de documentos. Vale destacar: o X (antigo Twitter) usa o BERT pra detectar conteúdo tóxico.
 
 Masked word prediction
-🇺🇸 BERT's training strategy: the model predicts masked or hidden words in a given sentence.
-🇧🇷 A estratégia de treinamento do BERT: o modelo prevê palavras mascaradas ou ocultas numa sentença.
+🇺🇸 BERT's training strategy where the model predicts masked or hidden words in a given sentence.
+🇧🇷 A estratégia de treinamento do BERT onde o modelo prevê palavras mascaradas ou ocultas numa sentença.
 
 GPT (Generative Pretrained Transformer)
 🇺🇸 Focuses on the decoder portion of the original transformer and is designed for tasks that require generating texts: machine translation, text summarization, fiction writing, writing computer code, and more.
-🇧🇷 Foca na porção decoder do transformer original e é feito pra tarefas que exigem gerar texto: tradução automática, sumarização, escrita de ficção, escrita de código de computador e mais.
+🇧🇷 Foca na porção decoder do transformer original e é projetado pra tarefas que exigem gerar texto: tradução automática, sumarização, escrita de ficção, código de computador e mais.
 
 Decoder-only
-🇺🇸 LLMs for generating text and following instructions (like GPT-3 and ChatGPT) only implement decoder modules, simplifying the architecture.
-🇧🇷 LLMs pra gerar texto e seguir instruções (como GPT-3 e ChatGPT) implementam só os módulos decoder, simplificando a arquitetura.
+🇺🇸 LLMs for generating text and following instructions, like GPT-3 and ChatGPT, only implement decoder modules, which simplifies the architecture compared to the original transformer.
+🇧🇷 LLMs pra gerar texto e seguir instruções, como GPT-3 e ChatGPT, implementam só os módulos decoder, o que simplifica a arquitetura em relação ao transformer original.
 
 Generative AI (GenAI)
-🇺🇸 Since LLMs are capable of generating text, they're often referred to as a form of generative artificial intelligence.
+🇺🇸 Since LLMs are capable of generating text, they are often referred to as a form of generative artificial intelligence.
 🇧🇷 Como os LLMs são capazes de gerar texto, eles costumam ser chamados de uma forma de inteligência artificial generativa.
 
 Deep learning
-🇺🇸 A subset of machine learning and AI focused on neural networks. It's what enabled LLMs to exist.
-🇧🇷 Um subconjunto do machine learning e da IA focado em redes neurais. Foi o que possibilitou a existência dos LLMs.
+🇺🇸 A subset of machine learning and AI focused on neural networks. It's the advancement that enabled LLMs to exist.
+🇧🇷 Um subconjunto do machine learning e da IA focado em redes neurais. Foi o avanço que possibilitou a existência dos LLMs.
 
 Machine learning
-🇺🇸 A subfield of AI — the idea is to enable computers to learn from data and make predictions or decisions without being explicitly programmed for the task.
-🇧🇷 Um subcampo da IA — a ideia é permitir que computadores aprendam a partir de dados e façam previsões ou decisões sem serem explicitamente programados pra tarefa.
+🇺🇸 A subfield of AI where the idea is to enable computers to learn from data and make predictions or decisions without being explicitly programmed to perform the task.
+🇧🇷 Um subcampo da IA onde a ideia é permitir que computadores aprendam a partir de dados e façam previsões ou decisões sem serem explicitamente programados pra tarefa.
 
 Pretraining
-🇺🇸 The initial phase where the model is trained on a large, diverse dataset to develop a broad understanding of language. The "pre" refers to this being the first stage. GPT-3's pretraining cost is estimated at $4.6 million in cloud computing credits!
-🇧🇷 A fase inicial em que o modelo é treinado num dataset grande e diverso pra desenvolver uma compreensão ampla da linguagem. O "pre" se refere a essa ser a primeira etapa. O custo do pré-treinamento do GPT-3 é estimado em US$ 4,6 milhões em créditos de computação em nuvem!
+🇺🇸 The initial phase where the model is trained on a large, diverse dataset to develop a broad understanding of language. The "pre" refers to this being the first stage before fine-tuning. GPT-3's pretraining cost is estimated at $4.6 million in cloud computing credits.
+🇧🇷 A fase inicial onde o modelo é treinado num dataset grande e diverso pra desenvolver uma compreensão ampla da linguagem. O "pre" se refere a essa ser a primeira etapa antes do fine-tuning. O custo do pré-treinamento do GPT-3 é estimado em US$ 4,6 milhões em créditos de computação em nuvem.
 
 Fine-tuning
-🇺🇸 The process where the pretrained model is specifically trained on a narrower dataset, more specific to particular tasks or domains. The two most popular categories: instruction fine-tuning and classification fine-tuning.
-🇧🇷 O processo em que o modelo pré-treinado é treinado especificamente num dataset mais estreito, mais específico pra determinadas tarefas ou domínios. As duas categorias mais populares: instruction fine-tuning e classification fine-tuning.
+🇺🇸 The process where the pretrained model is specifically trained on a narrower dataset, more specific to particular tasks or domains. The two most popular categories are instruction fine-tuning and classification fine-tuning.
+🇧🇷 O processo onde o modelo pré-treinado é treinado especificamente num dataset mais estreito e específico pra determinadas tarefas ou domínios. As duas categorias mais populares são instruction fine-tuning e classification fine-tuning.
 
 Instruction fine-tuning
-🇺🇸 The labeled dataset consists of instruction and answer pairs — like a query to translate a text accompanied by the correctly translated text.
-🇧🇷 O dataset rotulado consiste em pares de instrução e resposta — tipo um pedido pra traduzir um texto acompanhado do texto corretamente traduzido.
+🇺🇸 The labeled dataset consists of instruction and answer pairs, like a query to translate a text accompanied by the correctly translated text.
+🇧🇷 O dataset rotulado consiste em pares de instrução e resposta, tipo um pedido pra traduzir um texto acompanhado do texto corretamente traduzido.
 
 Classification fine-tuning
-🇺🇸 The labeled dataset consists of texts and associated class labels — for example, emails labeled "spam" and "not spam".
-🇧🇷 O dataset rotulado consiste em textos e rótulos de classe associados — por exemplo, e-mails rotulados como "spam" e "não spam".
+🇺🇸 The labeled dataset consists of texts and associated class labels, for example emails labeled "spam" and "not spam".
+🇧🇷 O dataset rotulado consiste em textos e rótulos de classe associados, por exemplo e-mails rotulados como "spam" e "não spam".
 
 Self-supervised learning
-🇺🇸 Used in the pretraining stage: the model generates its own labels from the input data. That's why no manual labeling is needed.
-🇧🇷 Usado na etapa de pré-treinamento: o modelo gera seus próprios rótulos a partir dos dados de entrada. Por isso não precisa de rotulagem manual.
+🇺🇸 Used in the pretraining stage: the model generates its own labels from the input data, so no manual labeling is needed.
+🇧🇷 Usado na etapa de pré-treinamento: o modelo gera seus próprios rótulos a partir dos dados de entrada, então não precisa de rotulagem manual.
 
 Raw text
-🇺🇸 Regular text without any labeling information (filtering may be applied, like removing formatting characters or documents in unknown languages).
-🇧🇷 Texto comum sem nenhuma informação de rotulagem (pode haver filtragem, como remover caracteres de formatação ou documentos em línguas desconhecidas).
+🇺🇸 Regular text without any labeling information. Filtering may be applied, like removing formatting characters or documents in unknown languages.
+🇧🇷 Texto comum sem nenhuma informação de rotulagem. Pode haver filtragem, como remover caracteres de formatação ou documentos em línguas desconhecidas.
 
 Base model / Foundation model
-🇺🇸 The pretrained LLM. It's incredibly versatile for further fine-tuning on downstream tasks — that's why it gets this name. GPT-3 is a typical example, capable of text completion.
-🇧🇷 O LLM pré-treinado. É incrivelmente versátil pra fine-tuning adicional em tarefas posteriores — por isso ganha esse nome. O GPT-3 é um exemplo típico, capaz de completar texto.
+🇺🇸 The pretrained LLM, versatile for further fine-tuning on downstream tasks. GPT-3 is a typical example, capable of text completion and with limited few-shot capabilities.
+🇧🇷 O LLM pré-treinado, versátil pra fine-tuning adicional em tarefas posteriores. O GPT-3 é um exemplo típico, capaz de completar texto e com capacidades limitadas de few-shot.
 
 Zero-shot learning
 🇺🇸 The ability to generalize to completely unseen tasks without any prior specific examples.
 🇧🇷 A capacidade de generalizar pra tarefas totalmente novas sem nenhum exemplo específico prévio.
 
 Few-shot learning
-🇺🇸 Learning from a minimal number of examples the user provides as input.
-🇧🇷 Aprender a partir de um número mínimo de exemplos que o usuário fornece como entrada.
+🇺🇸 Learning from a minimal number of examples the user provides as input, instead of needing extensive training data.
+🇧🇷 Aprender a partir de um número mínimo de exemplos que o usuário fornece como entrada, em vez de precisar de dados extensos de treinamento.
 
 Text completion
 🇺🇸 Finishing a half-written sentence provided by a user.
-🇧🇷 Terminar uma sentença escrita pela metade fornecida pelo usuário.
+🇧🇷 Terminar uma sentença escrita pela metade que o usuário forneceu.
 
 Emergent properties
-🇺🇸 Even though the pretraining task is just next-word prediction, GPT-like LLMs exhibit capabilities to classify, translate, or summarize texts — abilities the model wasn't explicitly trained for.
-🇧🇷 Mesmo a tarefa de pré-treinamento sendo só prever a próxima palavra, LLMs tipo GPT exibem capacidades de classificar, traduzir ou resumir textos — habilidades pras quais o modelo não foi explicitamente treinado.
+🇺🇸 Even though the pretraining task is just next-word prediction, GPT-like LLMs end up showing capabilities to classify, translate, or summarize texts, abilities the model was never explicitly trained for.
+🇧🇷 Mesmo a tarefa de pré-treinamento sendo só prever a próxima palavra, LLMs tipo GPT acabam mostrando capacidades de classificar, traduzir ou resumir textos, habilidades pras quais o modelo nunca foi treinado explicitamente.
 
 RNN (Recurrent Neural Network)
-🇺🇸 The most popular encoder-decoder architecture before transformers. A type of neural network where outputs from previous steps are fed as inputs to the current step. Works fine for short sentences but not for longer texts.
-🇧🇷 A arquitetura encoder-decoder mais popular antes dos transformers. Um tipo de rede neural em que as saídas dos passos anteriores alimentam o passo atual. Funciona bem pra sentenças curtas, mas não pra textos mais longos.
+🇺🇸 The most popular encoder-decoder architecture before transformers. A type of neural network where outputs from previous steps are fed as inputs to the current step. Works fine for short sentences but doesn't work well for longer texts.
+🇧🇷 A arquitetura encoder-decoder mais popular antes dos transformers. Um tipo de rede neural onde as saídas dos passos anteriores alimentam o passo atual. Funciona bem pra sentenças curtas mas não pra textos mais longos.
 
 Corpus
-🇺🇸 A comprehensive collection of text used for training — the datasets for GPT- and BERT-like models encompass billions of words, covering a vast array of topics and natural and computer languages.
-🇧🇷 Uma coleção abrangente de texto usada no treinamento — os datasets de modelos tipo GPT e BERT abrangem bilhões de palavras, cobrindo uma vasta gama de tópicos e línguas naturais e de computador.
+🇺🇸 A large collection of text used for training. The datasets for GPT and BERT-like models encompass billions of words, covering a vast array of topics and natural and computer languages.
+🇧🇷 Uma grande coleção de texto usada no treinamento. Os datasets de modelos tipo GPT e BERT abrangem bilhões de palavras, cobrindo uma vasta gama de tópicos e línguas naturais e de computador.
