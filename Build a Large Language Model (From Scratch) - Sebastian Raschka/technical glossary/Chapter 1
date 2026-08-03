@@ -1,127 +1,263 @@
-LLM (Large Language Model)
-🇺🇸 A deep neural network designed to understand, generate, and respond to human-like text. The "large" refers to two things: the model size in terms of parameters (tens or even hundreds of billions) and the huge dataset it's trained on, sometimes large portions of the publicly available text on the internet.
-🇧🇷 Uma rede neural profunda feita pra entender, gerar e responder texto parecido com o humano. O "large" se refere a duas coisas: o tamanho do modelo em parâmetros (dezenas ou até centenas de bilhões) e o dataset gigante em que ele é treinado, às vezes boa parte do texto público disponível na internet.
+Artificial Intelligence (AI) — Inteligência Artificial
 
-NLP (Natural Language Processing)
-🇺🇸 The field of AI focused on making computers work with human language. LLMs ushered in a new era for NLP, before them, traditional methods were good at things like spam classification but failed at tasks demanding complex understanding and generation abilities.
-🇧🇷 O campo da IA focado em fazer computadores trabalharem com linguagem humana. Os LLMs inauguraram uma nova era no NLP, antes deles os métodos tradicionais eram bons em coisas como classificação de spam mas falhavam em tarefas que exigiam compreensão e geração mais complexas.
+O que é: campo amplo que tenta fazer computadores executarem tarefas que exigiriam inteligência humana.
+Pra que serve: é a caixa mais externa onde os LLMs se encaixam.
+Liga com: contém Machine Learning, que contém Deep Learning, que contém os LLMs.
+Exemplo: um filtro de spam com lista fixa de palavras proibidas é IA, mas não aprende nada.
 
-Parameters
-🇺🇸 The adjustable weights in the network that are optimized during training to predict the next word in a sequence.
-🇧🇷 Os pesos ajustáveis da rede que são otimizados durante o treinamento pra prever a próxima palavra numa sequência.
+Machine Learning — Aprendizado de Máquina
 
-Next-word prediction
-🇺🇸 The core training task of LLMs: predicting the next word in the text. It makes sense because it harnesses the sequential nature of language, and it's surprising to many researchers that such a simple task produces such capable models.
-🇧🇷 A tarefa central de treinamento dos LLMs: prever a próxima palavra no texto. Faz sentido porque aproveita a natureza sequencial da linguagem, e surpreende muitos pesquisadores que uma tarefa tão simples produza modelos tão capazes.
+O que é: parte da IA onde o computador aprende com os dados em vez de receber todas as regras prontas.
+Pra que serve: é a ideia base do LLM. Ninguém escreve a gramática na mão.
+Liga com: dentro da IA, contém Deep Learning. Ainda precisa de alguém escolhendo as features.
+Exemplo: num classificador de spam, o especialista decide contar "prize", "win", "free" e exclamações.
 
-Transformer
-🇺🇸 The architecture behind most modern LLMs, introduced in the 2017 paper "Attention Is All You Need". Originally developed for machine translation from English to German and French. Has two submodules: encoder and decoder.
-🇧🇷 A arquitetura por trás da maioria dos LLMs modernos, apresentada no paper de 2017 "Attention Is All You Need". Foi criada originalmente pra tradução automática do inglês pro alemão e francês. Tem dois submódulos: encoder e decoder.
+Deep Learning — Aprendizado Profundo
 
-Encoder
-🇺🇸 The submodule that processes the input text and encodes it into a series of numerical representations or vectors that capture the contextual information of the input.
-🇧🇷 O submódulo que processa o texto de entrada e o codifica numa série de representações numéricas ou vetores que capturam a informação contextual da entrada.
+O que é: machine learning com redes neurais de várias camadas, que descobrem as features sozinhas.
+Pra que serve: é o que torna os LLMs possíveis.
+Liga com: dentro do Machine Learning, contém os LLMs. Corta a extração manual de features.
+Exemplo: o e-mail entra cru na rede e ela percebe sozinha que exclamação importa.
 
-Decoder
-🇺🇸 The submodule that takes the encoded vectors and generates the output text one word at a time.
-🇧🇷 O submódulo que pega os vetores codificados e gera o texto de saída uma palavra por vez.
+Large Language Model (LLM) — Grande Modelo de Linguagem
 
-Self-attention
-🇺🇸 The key component of transformers and LLMs. It allows the model to weigh the importance of different words or tokens in a sequence relative to each other, capturing long-range dependencies and contextual relationships within the input data. The "self" means it relates positions within a single input sequence.
-🇧🇷 O componente-chave dos transformers e LLMs. Permite que o modelo pondere a importância de diferentes palavras ou tokens numa sequência em relação umas às outras, capturando dependências de longo alcance e relações contextuais nos dados de entrada. O "self" significa que relaciona posições dentro de uma única sequência de entrada.
+O que é: rede neural profunda que entende e gera texto, treinada em quantidades enormes de texto. "Large" vale pros parâmetros e pro dataset.
+Pra que serve: é o que vamos construir no projeto.
+Liga com: dentro do Deep Learning, quase sempre usa Transformer. Treina em duas etapas: pretraining e fine-tuning.
+Exemplo: GPT-3 tem 175 bilhões de parâmetros em 96 camadas.
+Cuidado: "entender" aqui é força de expressão. Não tem consciência.
 
-Attention mechanism
-🇺🇸 Gives the LLM selective access to the whole input sequence when generating the output one word at a time. Some input tokens matter more than others for generating a given output token.
-🇧🇷 Dá ao LLM acesso seletivo à sequência de entrada inteira ao gerar a saída palavra por palavra. Alguns tokens de entrada importam mais que outros pra gerar um determinado token de saída.
+Natural Language Processing (NLP) — Processamento de Linguagem Natural
 
-Embedding
-🇺🇸 A numerical representation that captures many different factors in different dimensions.
-🇧🇷 Uma representação numérica que captura muitos fatores diferentes em dimensões diferentes.
+O que é: área que trata de fazer computadores lidarem com linguagem humana.
+Pra que serve: define as tarefas usadas pra avaliar o modelo.
+Liga com: antes dos LLMs dependia de regras e estatística simples, com um modelo por tarefa.
+Exemplo: escrever um e-mail a partir de palavras-chave era impossível antes, hoje é trivial.
 
-Token
-🇺🇸 A unit of text that a model reads. The number of tokens in a dataset is roughly equivalent to the number of words and punctuation characters in the text.
-🇧🇷 Uma unidade de texto que o modelo lê. O número de tokens num dataset é aproximadamente equivalente ao número de palavras e sinais de pontuação do texto.
+Generative AI (GenAI) — IA Generativa
 
-Tokenization
-🇺🇸 The process of converting text into tokens, covered in detail in chapter 2.
-🇧🇷 O processo de converter texto em tokens, visto em detalhe no capítulo 2.
+O que é: IA que cria conteúdo novo em vez de só classificar.
+Pra que serve: classifica o LLM pelo tipo de saída que ele produz.
+Liga com: contrasta com modelos que só dão um rótulo.
+Exemplo: BERT dizendo se um tweet é tóxico classifica. GPT escrevendo um parágrafo gera.
 
-BERT (Bidirectional Encoder Representations from Transformers)
-🇺🇸 Built upon the transformer's encoder submodule. Specializes in masked word prediction, which gives it strengths in text classification tasks like sentiment prediction and document categorization. Worth noting: X (formerly Twitter) uses BERT to detect toxic content.
-🇧🇷 Construído sobre o submódulo encoder do transformer. Se especializa em previsão de palavras mascaradas, o que dá força em tarefas de classificação de texto como análise de sentimento e categorização de documentos. Vale destacar: o X (antigo Twitter) usa o BERT pra detectar conteúdo tóxico.
+Parameters — Parâmetros
 
-Masked word prediction
-🇺🇸 BERT's training strategy where the model predicts masked or hidden words in a given sentence.
-🇧🇷 A estratégia de treinamento do BERT onde o modelo prevê palavras mascaradas ou ocultas numa sentença.
+O que é: os pesos ajustáveis da rede, otimizados no treino pra prever a próxima palavra.
+Pra que serve: são a memória do modelo. Todo o conhecimento fica guardado neles.
+Liga com: são o alvo do pretraining e do fine-tuning. Definem o "large" do LLM.
+Exemplo: 175 bilhões de parâmetros a 4 bytes cada dá uns 700 GB só de pesos.
+Dados e texto
 
-GPT (Generative Pretrained Transformer)
-🇺🇸 Focuses on the decoder portion of the original transformer and is designed for tasks that require generating texts: machine translation, text summarization, fiction writing, writing computer code, and more.
-🇧🇷 Foca na porção decoder do transformer original e é projetado pra tarefas que exigem gerar texto: tradução automática, sumarização, escrita de ficção, código de computador e mais.
+Token — Token
 
-Decoder-only
-🇺🇸 LLMs for generating text and following instructions, like GPT-3 and ChatGPT, only implement decoder modules, which simplifies the architecture compared to the original transformer.
-🇧🇷 LLMs pra gerar texto e seguir instruções, como GPT-3 e ChatGPT, implementam só os módulos decoder, o que simplifica a arquitetura em relação ao transformer original.
+O que é: a unidade de texto que o modelo lê, mais ou menos uma palavra ou pontuação.
+Pra que serve: é a menor peça que o modelo manipula. Tudo que entra e sai é token.
+Liga com: vem da tokenização, vira vetor no embedding, e é sobre ele que o self-attention calcula peso.
+Exemplo: o CommonCrawl do GPT-3 tem 410 bilhões de tokens.
 
-Generative AI (GenAI)
-🇺🇸 Since LLMs are capable of generating text, they are often referred to as a form of generative artificial intelligence.
-🇧🇷 Como os LLMs são capazes de gerar texto, eles costumam ser chamados de uma forma de inteligência artificial generativa.
+Tokenization — Tokenização
 
-Deep learning
-🇺🇸 A subset of machine learning and AI focused on neural networks. It's the advancement that enabled LLMs to exist.
-🇧🇷 Um subconjunto do machine learning e da IA focado em redes neurais. Foi o avanço que possibilitou a existência dos LLMs.
+O que é: processo de transformar texto bruto em sequência de tokens.
+Pra que serve: é o primeiro passo do pipeline. Sem isso não dá pra virar número.
+Liga com: pega raw text e devolve tokens, que depois viram IDs e embeddings.
+Exemplo: "This is an example" vira ["This", "is", "an", "example"].
 
-Machine learning
-🇺🇸 A subfield of AI where the idea is to enable computers to learn from data and make predictions or decisions without being explicitly programmed to perform the task.
-🇧🇷 Um subcampo da IA onde a ideia é permitir que computadores aprendam a partir de dados e façam previsões ou decisões sem serem explicitamente programados pra tarefa.
+Embedding — Vetor de Embedding
 
-Pretraining
-🇺🇸 The initial phase where the model is trained on a large, diverse dataset to develop a broad understanding of language. The "pre" refers to this being the first stage before fine-tuning. GPT-3's pretraining cost is estimated at $4.6 million in cloud computing credits.
-🇧🇷 A fase inicial onde o modelo é treinado num dataset grande e diverso pra desenvolver uma compreensão ampla da linguagem. O "pre" se refere a essa ser a primeira etapa antes do fine-tuning. O custo do pré-treinamento do GPT-3 é estimado em US$ 4,6 milhões em créditos de computação em nuvem.
+O que é: representação numérica do token em várias dimensões.
+Pra que serve: é a ponte entre a linguagem e as contas que a rede faz.
+Liga com: vem dos tokens, é o que o encoder entrega pro decoder.
+Exemplo: no GPT-2 de 124M, cada token vira um vetor de 768 números.
 
-Fine-tuning
-🇺🇸 The process where the pretrained model is specifically trained on a narrower dataset, more specific to particular tasks or domains. The two most popular categories are instruction fine-tuning and classification fine-tuning.
-🇧🇷 O processo onde o modelo pré-treinado é treinado especificamente num dataset mais estreito e específico pra determinadas tarefas ou domínios. As duas categorias mais populares são instruction fine-tuning e classification fine-tuning.
+Corpus — Corpus
 
-Instruction fine-tuning
-🇺🇸 The labeled dataset consists of instruction and answer pairs, like a query to translate a text accompanied by the correctly translated text.
-🇧🇷 O dataset rotulado consiste em pares de instrução e resposta, tipo um pedido pra traduzir um texto acompanhado do texto corretamente traduzido.
+O que é: a coleção de textos usada pra treinar.
+Pra que serve: é de onde vem todo o conhecimento do modelo.
+Liga com: alimenta o pretraining, é feito de raw text e medido em tokens.
+Exemplo: os datasets de GPT e BERT têm bilhões de palavras, incluindo código.
 
-Classification fine-tuning
-🇺🇸 The labeled dataset consists of texts and associated class labels, for example emails labeled "spam" and "not spam".
-🇧🇷 O dataset rotulado consiste em textos e rótulos de classe associados, por exemplo e-mails rotulados como "spam" e "não spam".
+Raw Text — Texto Bruto
 
-Self-supervised learning
-🇺🇸 Used in the pretraining stage: the model generates its own labels from the input data, so no manual labeling is needed.
-🇧🇷 Usado na etapa de pré-treinamento: o modelo gera seus próprios rótulos a partir dos dados de entrada, então não precisa de rotulagem manual.
+O que é: texto normal, sem nenhum rótulo.
+Pra que serve: alimenta o pretraining. É barato e existe em quantidade absurda.
+Liga com: oposto de labeled data. Só serve como treino por causa do self-supervised learning.
+Exemplo: uma página capturada por web crawling, sem ninguém ter anotado nada nela.
 
-Raw text
-🇺🇸 Regular text without any labeling information. Filtering may be applied, like removing formatting characters or documents in unknown languages.
-🇧🇷 Texto comum sem nenhuma informação de rotulagem. Pode haver filtragem, como remover caracteres de formatação ou documentos em línguas desconhecidas.
+Labeled Data — Dados Rotulados
 
-Base model / Foundation model
-🇺🇸 The pretrained LLM, versatile for further fine-tuning on downstream tasks. GPT-3 is a typical example, capable of text completion and with limited few-shot capabilities.
-🇧🇷 O LLM pré-treinado, versátil pra fine-tuning adicional em tarefas posteriores. O GPT-3 é um exemplo típico, capaz de completar texto e com capacidades limitadas de few-shot.
+O que é: dados que vêm com a resposta certa junto.
+Pra que serve: alimenta o fine-tuning.
+Liga com: o deep learning corta a escolha de features, mas continua precisando de rótulo.
+Exemplo: e-mails marcados como "spam" e "não spam".
+Arquitetura
 
-Zero-shot learning
-🇺🇸 The ability to generalize to completely unseen tasks without any prior specific examples.
-🇧🇷 A capacidade de generalizar pra tarefas totalmente novas sem nenhum exemplo específico prévio.
+Transformer — Transformer
 
-Few-shot learning
-🇺🇸 Learning from a minimal number of examples the user provides as input, instead of needing extensive training data.
-🇧🇷 Aprender a partir de um número mínimo de exemplos que o usuário fornece como entrada, em vez de precisar de dados extensos de treinamento.
+O que é: arquitetura do paper Attention Is All You Need (2017), criada pra tradução automática. Tem encoder e decoder.
+Pra que serve: é o esqueleto da maioria dos LLMs modernos.
+Liga com: deu origem ao BERT (só encoder) e ao GPT (só decoder). Substituiu as RNNs.
+Exemplo: traduzindo "This is an example", o encoder gera os vetores e o decoder produz "Das ist ein Beispiel".
 
-Text completion
-🇺🇸 Finishing a half-written sentence provided by a user.
-🇧🇷 Terminar uma sentença escrita pela metade que o usuário forneceu.
+Encoder — Codificador
 
-Emergent properties
-🇺🇸 Even though the pretraining task is just next-word prediction, GPT-like LLMs end up showing capabilities to classify, translate, or summarize texts, abilities the model was never explicitly trained for.
-🇧🇷 Mesmo a tarefa de pré-treinamento sendo só prever a próxima palavra, LLMs tipo GPT acabam mostrando capacidades de classificar, traduzir ou resumir textos, habilidades pras quais o modelo nunca foi treinado explicitamente.
+O que é: submódulo que processa a entrada e transforma em vetores com informação de contexto.
+Pra que serve: consegue olhar a frase nos dois sentidos, o que é bom pra compreensão.
+Liga com: é a base do BERT. Não existe na arquitetura do GPT.
+Exemplo: codifica o texto da língua de origem pra o decoder usar depois.
 
-RNN (Recurrent Neural Network)
-🇺🇸 The most popular encoder-decoder architecture before transformers. A type of neural network where outputs from previous steps are fed as inputs to the current step. Works fine for short sentences but doesn't work well for longer texts.
-🇧🇷 A arquitetura encoder-decoder mais popular antes dos transformers. Um tipo de rede neural onde as saídas dos passos anteriores alimentam o passo atual. Funciona bem pra sentenças curtas mas não pra textos mais longos.
+Decoder — Decodificador
 
-Corpus
-🇺🇸 A large collection of text used for training. The datasets for GPT and BERT-like models encompass billions of words, covering a vast array of topics and natural and computer languages.
-🇧🇷 Uma grande coleção de texto usada no treinamento. Os datasets de modelos tipo GPT e BERT abrangem bilhões de palavras, cobrindo uma vasta gama de tópicos e línguas naturais e de computador.
+O que é: submódulo que pega os vetores e gera o texto de saída, uma palavra por vez.
+Pra que serve: é o componente que gera. Olha só pra trás, o que combina com prever a próxima palavra.
+Liga com: é a única metade que sobra no GPT. É o que torna o modelo autorregressivo.
+Exemplo: é esse submódulo que vamos implementar no Capítulo 4.
+
+Self-Attention — Autoatenção
+
+O que é: mecanismo que pesa a importância de cada palavra em relação às outras da mesma frase.
+Pra que serve: é a peça central. Captura relação entre palavras distantes.
+Liga com: conecta as camadas do encoder e do decoder. Detalhes no Capítulo 3.
+Exemplo: em "o animal não atravessou a rua porque ele estava cansado", faz "ele" apontar pra "animal" e não pra "rua".
+
+Attention Mechanism — Mecanismo de Atenção
+
+O que é: dá ao modelo acesso seletivo à entrada inteira enquanto gera a saída.
+Pra que serve: resolve o gargalo das arquiteturas antigas, que espremiam tudo num estado fixo.
+Liga com: no transformer aparece como self-attention. É o que superou o limite das RNNs.
+Exemplo: ao gerar "Beispiel", pode dar peso maior pra "example" mesmo estando longe.
+
+Decoder-only — Só-Decoder
+
+O que é: arquitetura que usa só o decoder e joga fora o encoder.
+Pra que serve: simplifica sem perder capacidade de gerar.
+Liga com: é a arquitetura do GPT e do ChatGPT.
+Exemplo: mesmo sem encoder, o GPT consegue traduzir.
+
+BERT — Bidirectional Encoder Representations from Transformers
+
+O que é: variante feita em cima do encoder, treinada preenchendo palavras escondidas.
+Pra que serve: é bom em classificar texto, não em gerar.
+Liga com: contrasta com o GPT ponto a ponto.
+Exemplo: recebe "This is an __ of how concise I __ be" e reconstrói a frase. O X usa BERT pra detectar conteúdo tóxico.
+
+GPT — Generative Pretrained Transformer
+
+O que é: variante que usa só o decoder, feita pra gerar texto.
+Pra que serve: é a arquitetura que vamos implementar.
+Liga com: treina por next-word prediction de forma autorregressiva. Exibe zero-shot e few-shot.
+Exemplo: GPT-3 tem 96 camadas contra as 6 repetições do transformer original.
+
+Autoregressive — Autorregressivo
+
+O que é: modelo que usa as próprias saídas anteriores como entrada.
+Pra que serve: descreve como o GPT gera. Cada palavra nova olha a sequência anterior.
+Liga com: vem do jeito sequencial do decoder.
+Exemplo: "Every effort moves" → "you". Depois "Every effort moves you" → "forward".
+
+RNN — Rede Neural Recorrente
+
+O que é: arquitetura onde a saída do passo anterior alimenta o atual. Era a mais usada antes dos transformers.
+Pra que serve: comparação histórica, ajuda a entender o que a atenção veio resolver.
+Liga com: foi substituída pelo transformer. A limitação dela motivou o mecanismo de atenção.
+Exemplo: vai bem em frase curta, trava em texto longo.
+Treinamento
+
+Pretraining — Pré-treinamento
+
+O que é: primeira etapa, num dataset grande e sem rótulos, pra o modelo aprender linguagem em geral.
+Pra que serve: é onde o modelo aprende praticamente tudo.
+Liga com: consome raw text, usa self-supervised learning e produz um foundation model.
+Exemplo: o do GPT-3 custou uns 4,6 milhões de dólares em créditos de nuvem.
+
+Fine-tuning — Ajuste Fino
+
+O que é: treino extra num dataset menor e rotulado, voltado pra uma tarefa específica.
+Pra que serve: especializa o modelo genérico. Custa uma fração do pretraining.
+Liga com: parte de um foundation model. Se divide em instruction e classification.
+Exemplo: BloombergGPT, especializado em finanças, supera LLMs gerais naquela área.
+
+Instruction Fine-tuning — Ajuste Fino por Instrução
+
+O que é: fine-tuning com dataset de pares instrução + resposta.
+Pra que serve: transforma um modelo que só completa texto num que segue comandos.
+Liga com: gera assistentes e modelos de chat. Capítulo 7.
+Exemplo: "Traduza para o alemão: This is an example" + "Das ist ein Beispiel".
+
+Classification Fine-tuning — Ajuste Fino para Classificação
+
+O que é: fine-tuning com dataset de textos e rótulos de classe.
+Pra que serve: faz o modelo devolver uma decisão fechada em vez de texto livre.
+Liga com: gera classificadores. Capítulo 6.
+Exemplo: e-mails marcados como "spam" e "não spam".
+
+Self-Supervised Learning — Aprendizado Auto-Supervisionado
+
+O que é: o modelo cria os próprios rótulos a partir da estrutura dos dados.
+Pra que serve: é o que torna o pretraining viável. Dá pra usar texto sem anotação nenhuma.
+Liga com: implementado na prática pela next-word prediction.
+Exemplo: em "Every effort moves you", a entrada é "Every effort moves" e o rótulo é "you".
+
+Supervised Learning — Aprendizado Supervisionado
+
+O que é: treino que exige dados rotulados por alguém de fora.
+Pra que serve: é o paradigma do fine-tuning.
+Liga com: a exigência de rótulo é o gargalo que o self-supervised contorna.
+Exemplo: alguém precisou marcar cada e-mail como spam antes de treinar.
+
+Next-Word Prediction — Previsão da Próxima Palavra
+
+O que é: o modelo aprende a prever a palavra seguinte usando as anteriores.
+Pra que serve: é a tarefa central do pretraining do GPT.
+Liga com: implementa o self-supervised learning. É dela que nascem as propriedades emergentes.
+Exemplo: "LLMs learn to predict one word at a" → "time". Tarefa simples que gera modelos surpreendentemente capazes.
+
+Masked Word Prediction — Previsão de Palavra Mascarada
+
+O que é: palavras são escondidas na frase e o modelo aprende a reconstruir.
+Pra que serve: é a tarefa de treino do BERT. Deixa olhar os dois lados da lacuna.
+Liga com: contrasta com a next-word prediction, que é unidirecional.
+Exemplo: "This is an __ of how concise I __ be" vira a frase completa.
+
+Foundation Model — Modelo Base / de Fundação
+
+O que é: o LLM que sai do pretraining.
+Pra que serve: ponto de partida reutilizável. Dá pra derivar várias especializações dele.
+Liga com: produto do pretraining, insumo do fine-tuning. Já faz text completion.
+Exemplo: o GPT-3.
+
+Pretrained Weights — Pesos Pré-Treinados
+
+O que é: os parâmetros de um modelo já treinado, publicados pra quem quiser usar.
+Pra que serve: permitem pular a etapa mais cara.
+Liga com: é a etapa 7 do roteiro do livro.
+Exemplo: no Capítulo 6 vamos carregar os pesos do GPT-2 na arquitetura que construirmos.
+Capacidades
+
+Zero-shot Learning — Aprendizado sem Exemplos
+
+O que é: generalizar pra tarefas novas sem nenhum exemplo prévio.
+Pra que serve: mostra que o conhecimento do pretraining é transferível.
+Liga com: manifestação prática das propriedades emergentes.
+Exemplo: dar só "Translate to German: cat" e receber "Katze".
+
+Few-shot Learning — Aprendizado com Poucos Exemplos
+
+O que é: aprender a tarefa com pouquíssimos exemplos dados na própria entrada.
+Pra que serve: ajusta o comportamento sem mexer em nenhum parâmetro.
+Liga com: fica entre o zero-shot e o fine-tuning.
+Exemplo: "cat → Katze, dog → Hund, mouse → ?" e o modelo responde "Maus".
+
+Text Completion — Completação de Texto
+
+O que é: terminar uma frase escrita pela metade.
+Pra que serve: é a capacidade nativa do foundation model. Todo o resto se constrói em cima disso.
+Liga com: consequência direta da next-word prediction.
+Exemplo: o usuário escreve metade da frase e o modelo completa.
+
+Emergent Behavior — Comportamento Emergente
+
+O que é: fazer tarefas pras quais o modelo nunca foi treinado.
+Pra que serve: é o que justifica ter um LLM de propósito geral em vez de um por tarefa.
+Liga com: nasce da next-word prediction em cima de um corpus enorme e variado.
+Exemplo: o GPT traduz mesmo tendo sido treinado só pra prever a próxima palavra. Isso pegou os pesquisadores de surpresa.
