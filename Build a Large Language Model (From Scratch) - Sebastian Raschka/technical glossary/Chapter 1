@@ -1,4 +1,231 @@
+Fundamentos
+
 Artificial Intelligence (AI) — Inteligência Artificial
+
+O que é: campo amplo que tenta fazer computadores executarem tarefas que exigiriam inteligência humana. Inclui também sistemas de regras, algoritmos genéticos e lógica fuzzy.
+Pra que serve: é a caixa mais externa da hierarquia. Dentro dela vem o machine learning, dentro dele o deep learning, e só então os LLMs. São caixas dentro de caixas, não sinônimos.
+Exemplo: um filtro de spam com lista fixa de palavras proibidas é IA, mas não aprende nada com os dados.
+
+Machine Learning — Aprendizado de Máquina
+
+O que é: parte da IA onde o computador aprende com os dados em vez de receber todas as regras prontas.
+Pra que serve: é a ideia que sustenta o LLM — ninguém escreve a gramática na mão. A diferença pro deep learning é que aqui ainda precisa de um especialista escolhendo as features.
+Exemplo: num classificador de spam tradicional, alguém decide contar as palavras "prize", "win", "free" e o número de exclamações.
+
+Deep Learning — Aprendizado Profundo
+
+O que é: machine learning com redes neurais de várias camadas, que descobrem as features sozinhas.
+Pra que serve: é o que torna os LLMs possíveis. Corta a extração manual de features, mas continua precisando de rótulos quando o treino é supervisionado.
+Exemplo: o e-mail entra cru na rede e ela percebe sozinha que exclamação importa.
+
+Large Language Model (LLM) — Grande Modelo de Linguagem
+
+O que é: rede neural profunda que entende e gera texto, treinada em quantidades enormes de texto. O "large" vale tanto pros parâmetros quanto pro dataset.
+Pra que serve: é o que vamos construir no projeto. Quase sempre usa a arquitetura transformer e treina em duas etapas, pretraining e fine-tuning. Vale notar que nem todo transformer é LLM e nem todo LLM é transformer.
+Exemplo: GPT-3 tem 175 bilhões de parâmetros em 96 camadas.
+Cuidado: "entender" aqui é força de expressão. Não tem consciência.
+
+Natural Language Processing (NLP) — Processamento de Linguagem Natural
+
+O que é: área que trata de fazer computadores lidarem com linguagem humana.
+Pra que serve: define as tarefas usadas pra avaliar o modelo. Antes dos LLMs dependia de regras e estatística simples, com um modelo separado pra cada tarefa.
+Exemplo: escrever um e-mail a partir de palavras-chave era impossível antes, hoje é trivial.
+
+Generative AI (GenAI) — IA Generativa
+
+O que é: IA que cria conteúdo novo em vez de só classificar.
+Pra que serve: classifica o LLM pelo tipo de saída. Faz contraste com modelos que só devolvem um rótulo, como o BERT.
+Exemplo: BERT dizendo se um tweet é tóxico classifica. GPT escrevendo um parágrafo gera.
+
+Parameters — Parâmetros
+
+O que é: os pesos ajustáveis da rede, otimizados no treino pra prever a próxima palavra.
+Pra que serve: são a memória do modelo. É neles que fica guardado tudo que o pretraining ensinou, e é neles que o fine-tuning mexe depois. Definem o primeiro sentido de "large".
+Exemplo: 175 bilhões de parâmetros a 4 bytes cada dá uns 700 GB só de pesos.
+Dados e texto
+
+Token — Token
+
+O que é: a unidade de texto que o modelo lê, mais ou menos uma palavra ou pontuação.
+Pra que serve: é a menor peça que o modelo manipula, tudo que entra e sai é token. Sai da tokenização, vira vetor no embedding e é sobre ele que o self-attention calcula peso.
+Exemplo: o CommonCrawl usado no GPT-3 tem 410 bilhões de tokens.
+
+Tokenization — Tokenização
+
+O que é: processo de transformar texto bruto em sequência de tokens.
+Pra que serve: é o primeiro passo do pipeline. Pega raw text e devolve tokens, que depois viram IDs numéricos e embeddings.
+Exemplo: "This is an example" vira ["This", "is", "an", "example"].
+
+Embedding — Vetor de Embedding
+
+O que é: representação numérica do token espalhada em várias dimensões.
+Pra que serve: é a ponte entre a linguagem e as contas que a rede faz. É nesse formato que o encoder entrega informação pro decoder.
+Exemplo: no GPT-2 de 124M, cada token vira um vetor de 768 números.
+
+Corpus — Corpus
+
+O que é: a coleção de textos usada pra treinar.
+Pra que serve: é de onde vem todo o conhecimento do modelo. Alimenta o pretraining, é feito de raw text e medido em tokens. A variedade dele é a origem das propriedades emergentes.
+Exemplo: os datasets de GPT e BERT têm bilhões de palavras, incluindo código.
+
+Raw Text — Texto Bruto
+
+O que é: texto normal, sem nenhum rótulo.
+Pra que serve: alimenta o pretraining. É barato e existe em quantidade absurda, e só dá pra usar como treino por causa do self-supervised learning, que cria os rótulos a partir do próprio texto.
+Exemplo: uma página capturada por web crawling, sem ninguém ter anotado nada nela.
+
+Labeled Data — Dados Rotulados
+
+O que é: dados que vêm com a resposta certa junto.
+Pra que serve: alimenta o fine-tuning. Vale reforçar que o deep learning corta a escolha de features, mas continua precisando de rótulo.
+Exemplo: e-mails marcados como "spam" e "não spam".
+Arquitetura
+
+Transformer — Transformer
+
+O que é: arquitetura do paper Attention Is All You Need (2017), criada pra tradução automática. Tem dois submódulos, encoder e decoder, ligados por self-attention.
+Pra que serve: é o esqueleto da maioria dos LLMs modernos. Dele saíram o BERT, que ficou só com o encoder, e o GPT, que ficou só com o decoder. Substituiu as RNNs em tradução.
+Exemplo: traduzindo "This is an example", o encoder gera os vetores e o decoder produz "Das ist ein Beispiel".
+
+Encoder — Codificador
+
+O que é: submódulo que processa a entrada e transforma em vetores com informação de contexto.
+Pra que serve: consegue olhar a frase nos dois sentidos, o que é bom pra compreensão e classificação. É a base do BERT e não existe na arquitetura do GPT.
+Exemplo: codifica o texto da língua de origem pra o decoder usar depois.
+
+Decoder — Decodificador
+
+O que é: submódulo que pega os vetores e gera o texto de saída, uma palavra por vez.
+Pra que serve: é o componente que gera. Olha só pra trás, o que combina com prever a próxima palavra, e é isso que torna o modelo autorregressivo. É a única metade que sobra no GPT.
+Exemplo: é esse submódulo que vamos implementar no Capítulo 4.
+
+Self-Attention — Autoatenção
+
+O que é: mecanismo que pesa a importância de cada palavra em relação às outras da mesma frase.
+Pra que serve: é a peça central dos transformers. Captura relação entre palavras distantes e conecta as camadas do encoder e do decoder. Os detalhes ficam pro Capítulo 3.
+Exemplo: em "o animal não atravessou a rua porque ele estava cansado", faz "ele" apontar pra "animal" e não pra "rua".
+
+Attention Mechanism — Mecanismo de Atenção
+
+O que é: dá ao modelo acesso seletivo à entrada inteira enquanto gera a saída.
+Pra que serve: resolve o gargalo das RNNs, que espremiam tudo num estado de tamanho fixo. No transformer, aparece implementado como self-attention.
+Exemplo: ao gerar "Beispiel", pode dar peso maior pra "example" mesmo estando longe na frase.
+
+Decoder-only — Só-Decoder
+
+O que é: arquitetura que usa só o decoder e joga fora o encoder.
+Pra que serve: simplifica sem perder capacidade de gerar. É a arquitetura do GPT e do ChatGPT, e faz contraste com o transformer completo e com o BERT.
+Exemplo: mesmo sem encoder, o GPT consegue traduzir.
+
+BERT — Bidirectional Encoder Representations from Transformers
+
+O que é: variante feita em cima do encoder, treinada preenchendo palavras escondidas.
+Pra que serve: é bom em classificar texto, não em gerar. Contrasta com o GPT ponto a ponto: usa encoder em vez de decoder e masked em vez de next-word prediction.
+Exemplo: recebe "This is an __ of how concise I __ be" e reconstrói a frase. O X usa BERT pra detectar conteúdo tóxico.
+
+GPT — Generative Pretrained Transformer
+
+O que é: variante que usa só o decoder, feita pra gerar texto.
+Pra que serve: é a arquitetura que vamos implementar. Treina por next-word prediction de forma autorregressiva e exibe zero-shot, few-shot e comportamento emergente.
+Exemplo: GPT-3 tem 96 camadas contra as 6 repetições do transformer original.
+
+Autoregressive — Autorregressivo
+
+O que é: modelo que usa as próprias saídas anteriores como entrada.
+Pra que serve: descreve como o GPT gera texto na prática. Vem direto do jeito sequencial do decoder e é como a next-word prediction funciona na inferência.
+Exemplo: "Every effort moves" → "you". Depois "Every effort moves you" → "forward".
+
+RNN — Rede Neural Recorrente
+
+O que é: arquitetura onde a saída do passo anterior alimenta o atual. Era a mais usada antes dos transformers.
+Pra que serve: comparação histórica. A limitação dela é justamente o que motivou o mecanismo de atenção.
+Exemplo: vai bem em frase curta, trava em texto longo porque tudo precisa caber num estado fixo.
+Treinamento
+
+Pretraining — Pré-treinamento
+
+O que é: primeira etapa, num dataset grande e sem rótulos, pra o modelo aprender linguagem em geral.
+Pra que serve: é onde o modelo aprende praticamente tudo. Consome raw text, usa self-supervised learning com next-word prediction e produz um foundation model.
+Exemplo: o do GPT-3 custou uns 4,6 milhões de dólares em créditos de nuvem.
+
+Fine-tuning — Ajuste Fino
+
+O que é: treino extra num dataset menor e rotulado, voltado pra uma tarefa específica.
+Pra que serve: especializa o modelo genérico e custa uma fração do pretraining. Parte de um foundation model e se divide em instruction e classification fine-tuning.
+Exemplo: BloombergGPT, especializado em finanças, supera LLMs gerais naquela área.
+
+Instruction Fine-tuning — Ajuste Fino por Instrução
+
+O que é: fine-tuning com dataset de pares instrução + resposta.
+Pra que serve: transforma um modelo que só completa texto num que segue comandos. É o que gera assistentes e modelos de chat, e é o assunto do Capítulo 7.
+Exemplo: "Traduza para o alemão: This is an example" + "Das ist ein Beispiel".
+
+Classification Fine-tuning — Ajuste Fino para Classificação
+
+O que é: fine-tuning com dataset de textos e rótulos de classe.
+Pra que serve: faz o modelo devolver uma decisão fechada em vez de texto livre. Gera classificadores e é o assunto do Capítulo 6.
+Exemplo: e-mails marcados como "spam" e "não spam".
+
+Self-Supervised Learning — Aprendizado Auto-Supervisionado
+
+O que é: o modelo cria os próprios rótulos a partir da estrutura dos dados.
+Pra que serve: é o que torna o pretraining viável, porque permite usar texto sem nenhuma anotação. Na prática é implementado pela next-word prediction.
+Exemplo: em "Every effort moves you", a entrada é "Every effort moves" e o rótulo é "you".
+
+Supervised Learning — Aprendizado Supervisionado
+
+O que é: treino que exige dados rotulados por alguém de fora.
+Pra que serve: é o paradigma do fine-tuning. A exigência de rótulo é justamente o gargalo que o self-supervised contorna no pretraining.
+Exemplo: alguém precisou marcar cada e-mail como spam antes de treinar.
+
+Next-Word Prediction — Previsão da Próxima Palavra
+
+O que é: o modelo aprende a prever a palavra seguinte usando as anteriores.
+Pra que serve: é a tarefa central do pretraining do GPT. Implementa o self-supervised learning e é dela que nascem as propriedades emergentes.
+Exemplo: "LLMs learn to predict one word at a" → "time". Tarefa simples que gera modelos surpreendentemente capazes.
+
+Masked Word Prediction — Previsão de Palavra Mascarada
+
+O que é: palavras são escondidas na frase e o modelo aprende a reconstruir.
+Pra que serve: é a tarefa de treino do BERT. Deixa olhar os dois lados da lacuna, ao contrário da next-word prediction, que é unidirecional.
+Exemplo: "This is an __ of how concise I __ be" vira a frase completa.
+
+Foundation Model — Modelo Base / de Fundação
+
+O que é: o LLM que sai do pretraining.
+Pra que serve: ponto de partida reutilizável, do qual dá pra derivar várias especializações via fine-tuning. Já consegue fazer text completion e tem capacidade limitada de few-shot.
+Exemplo: o GPT-3.
+
+Pretrained Weights — Pesos Pré-Treinados
+
+O que é: os parâmetros de um modelo já treinado, publicados pra quem quiser usar.
+Pra que serve: permitem pular a etapa mais cara do processo. É a etapa 7 do roteiro do livro.
+Exemplo: no Capítulo 6 vamos carregar os pesos do GPT-2 na arquitetura que construirmos no Capítulo 4.
+Capacidades
+
+Zero-shot Learning — Aprendizado sem Exemplos
+
+O que é: generalizar pra tarefas novas sem nenhum exemplo prévio.
+Pra que serve: mostra que o conhecimento do pretraining é transferível. É uma manifestação prática das propriedades emergentes.
+Exemplo: dar só "Translate to German: cat" e receber "Katze".
+
+Few-shot Learning — Aprendizado com Poucos Exemplos
+
+O que é: aprender a tarefa com pouquíssimos exemplos dados na própria entrada.
+Pra que serve: ajusta o comportamento sem mexer em nenhum parâmetro. Fica no meio do caminho entre o zero-shot e o fine-tuning.
+Exemplo: "cat → Katze, dog → Hund, mouse → ?" e o modelo responde "Maus".
+
+Text Completion — Completação de Texto
+
+O que é: terminar uma frase escrita pela metade.
+Pra que serve: é a capacidade nativa do foundation model, consequência direta da next-word prediction. Todo o resto se constrói em cima disso.
+Exemplo: o usuário escreve metade da frase e o modelo completa.
+
+Emergent Behavior — Comportamento Emergente
+
+O que é: fazer tarefas pras quais o modelo nunca foi treinado.
+Pra que serve: é o que justifica ter um LLM de propósito geral em vez de um modelo por tarefa. Nasce da next-word prediction em cima de um corpus enorme e variado.
+Exemplo: o GPT traduz mesmo tendo sido treinado só pra prever a próxima palavra. Isso pegou os pesquisadores de surpresa.Artificial Intelligence (AI) — Inteligência Artificial
 
 O que é: campo amplo que tenta fazer computadores executarem tarefas que exigiriam inteligência humana.
 Pra que serve: é a caixa mais externa onde os LLMs se encaixam.
